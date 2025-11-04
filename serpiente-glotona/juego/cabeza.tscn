@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl8kj2y4ignu7"]
+[gd_scene load_steps=4 format=3 uid="uid://dl8kj2y4ignu7"]
 
+[ext_resource type="Script" uid="uid://61v0fk78d44f" path="res://juego/cabeza.gd" id="1_7j58c"]
 [ext_resource type="Texture2D" uid="uid://csi08lqb5eboc" path="res://juego/sprites/jugador/cabeza_serpiente.png" id="1_nkr8f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j58c"]
 size = Vector2(23, 23)
 
 [node name="Cabeza" type="Area2D"]
+script = ExtResource("1_7j58c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nkr8f")

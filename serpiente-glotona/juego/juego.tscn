@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcs1lf7n6ehdw"]
+[gd_scene load_steps=3 format=3 uid="uid://dcs1lf7n6ehdw"]
 
 [ext_resource type="Script" uid="uid://c7w2m8s6cc43q" path="res://juego/juego.gd" id="1_v8xs4"]
+[ext_resource type="PackedScene" uid="uid://dl8kj2y4ignu7" path="res://juego/cabeza.tscn" id="2_wvbjv"]
 
 [node name="Juego" type="Node"]
 script = ExtResource("1_v8xs4")
+
+[node name="Cabeza" parent="." instance=ExtResource("2_wvbjv")]
+unique_name_in_owner = true
+position = Vector2(128, 192)
