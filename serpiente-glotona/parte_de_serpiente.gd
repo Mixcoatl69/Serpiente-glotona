@@ -1,0 +1,1 @@
+class_name Cola extends parte_de_serpiente

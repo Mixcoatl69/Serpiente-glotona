@@ -1,7 +1,8 @@
 class_name Juego extends Node
 
-@onready var Cabeza: cabeza = $Cabeza as cabeza
+@onready var cabeza: Cabeza = $Cabeza as Cabeza
 @onready var Limites: limites = %Limites as limites
+@onready var spawner: Spawner = $Spawner as Spawner 
 
 
 var time_between_moves:float = 1000.0
@@ -10,6 +11,8 @@ var speed:float = 5000.0
 var move_dir:Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
+	cabeza.comida_comida.connect(_on_comida_comida)
+	spawner.spawn_comida()
 	pass
 
 
@@ -32,7 +35,11 @@ func _physics_process(delta: float) -> void:
 
 func update_serpiente():
 
-	var new_pos:Vector2 = Cabeza.position + move_dir * Global.GRID_SIZE
+	var new_pos:Vector2 = cabeza.position + move_dir * Global.GRID_SIZE
 	new_pos = Limites.wrap_vector(new_pos)
-	Cabeza.move_to(new_pos)
+	cabeza.move_to(new_pos)
 	pass
+
+func _on_comida_comida():
+	print("la comida fue comida")
+	spawner.call_deferred("spawn_comida")

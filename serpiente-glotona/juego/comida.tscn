@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfukkmtecjm03"]
+
+[ext_resource type="Texture2D" uid="uid://1ifp07hc6703" path="res://juego/sprites/frutas/naranja.png" id="1_5gypu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb3tq"]
+size = Vector2(20, 19)
+
+[node name="Comida" type="Area2D" groups=["Comida"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5gypu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rb3tq")
