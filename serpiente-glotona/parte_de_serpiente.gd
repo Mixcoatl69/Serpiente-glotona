@@ -1,1 +1,1 @@
-class_name Cola extends parte_de_serpiente
+class_name Cola extends Parte_de_serpiente

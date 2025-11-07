@@ -9,10 +9,12 @@ var time_between_moves:float = 1000.0
 var time_since_last_move:float = 0 
 var speed:float = 5000.0
 var move_dir:Vector2 = Vector2.RIGHT
+var parte_de_serpiente:Array[Parte_de_serpiente] = []
 
 func _ready() -> void:
 	cabeza.comida_comida.connect(_on_comida_comida)
 	spawner.spawn_comida()
+	
 	pass
 
 

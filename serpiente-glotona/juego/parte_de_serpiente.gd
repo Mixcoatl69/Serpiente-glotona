@@ -1,4 +1,4 @@
-class_name parte_de_serpiente extends Area2D
+class_name Parte_de_serpiente extends Area2D
 
 var last_position:Vector2
 
