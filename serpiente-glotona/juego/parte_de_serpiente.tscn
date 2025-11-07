@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dso2gbuga4xk2"]
 
-[ext_resource type="Script" uid="uid://cmcytag0txlvq" path="res://parte_de_serpiente.gd" id="1_1s5ha"]
+[ext_resource type="Script" uid="uid://cmcytag0txlvq" path="res://juego/cola.gd" id="1_1s5ha"]
 [ext_resource type="Texture2D" uid="uid://dt2es5arllqcp" path="res://juego/sprites/jugador/cola_serpiente.png" id="2_12rxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_is7mq"]
 size = Vector2(24, 24)
 
-[node name="parte_de_serpiente" type="Area2D"]
+[node name="cola" type="Area2D"]
 script = ExtResource("1_1s5ha")
 metadata/_custom_type_script = "uid://ngkbo1d2so71"
 

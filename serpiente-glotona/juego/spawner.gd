@@ -1,8 +1,11 @@
 class_name Spawner extends Node2D
 
+signal cola_added(cola:Cola)
+
 @export var Limites: limites
 
 var escena_comida:PackedScene =  preload("uid://bfukkmtecjm03")
+var escena_cola:PackedScene = preload("uid://hhceptfmrm8w")
 
 func spawn_comida():
 	
@@ -17,4 +20,10 @@ func spawn_comida():
 	comida.position = spawn_point
 	
 	get_parent().add_child(comida)
-	pass
+	
+func spawn_cola(pos:Vector2):
+	var cola:Cola = escena_cola.instantiate() as Cola
+	cola.position = pos
+	get_parent().add_child(cola)
+	cola_added.emit(cola)
+	

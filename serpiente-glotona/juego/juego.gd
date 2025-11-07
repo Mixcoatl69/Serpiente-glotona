@@ -13,9 +13,10 @@ var parte_de_serpiente:Array[Parte_de_serpiente] = []
 
 func _ready() -> void:
 	Cabeza.comida_comida.connect(_on_comida_comida)
+	Cabeza.collided_with_cola.connect(_on_cola_collided)
+	spawner.cola_added.connect(_on_cola_added)
 	spawner.spawn_comida()
-	
-	pass
+	parte_de_serpiente.push_back(Cabeza)
 
 
 func _process(_delta: float) -> void:
@@ -37,11 +38,21 @@ func _physics_process(delta: float) -> void:
 
 func update_serpiente():
 
-	var new_pos:Vector2 = cabeza.position + move_dir * Global.GRID_SIZE
+	var new_pos:Vector2 = Cabeza.position + move_dir * Global.GRID_SIZE
 	new_pos = Limites.wrap_vector(new_pos)
 	Cabeza.move_to(new_pos)
-	pass
+	
+	for i in range(1,parte_de_serpiente.size(),1):
+		parte_de_serpiente[i].move_to(parte_de_serpiente[i-1].last_position)
 
 func _on_comida_comida():
 	print("la comida fue comida")
 	spawner.call_deferred("spawn_comida")
+	spawner.call_deferred("spawn_cola",parte_de_serpiente[parte_de_serpiente.size()-1].last_position)
+	speed += 500.0
+	
+func _on_cola_added(cola:Cola):
+	parte_de_serpiente.push_back(cola)
+
+func _on_cola_collided():
+	print("Has muerto")

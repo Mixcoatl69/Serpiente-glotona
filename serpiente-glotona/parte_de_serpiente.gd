@@ -1,1 +1,0 @@
-class_name Parte_de_serpiente extends Area2D

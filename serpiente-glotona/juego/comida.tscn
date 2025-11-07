@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfukkmtecjm03"]
+[gd_scene load_steps=6 format=3 uid="uid://bfukkmtecjm03"]
 
 [ext_resource type="Texture2D" uid="uid://1ifp07hc6703" path="res://juego/sprites/frutas/naranja.png" id="1_5gypu"]
+[ext_resource type="Script" uid="uid://umm8stj3f7tb" path="res://juego/comida.gd" id="1_rb3tq"]
+[ext_resource type="Texture2D" uid="uid://6oqt48mvhjds" path="res://juego/sprites/frutas/fresa.png" id="2_wgarq"]
+[ext_resource type="Texture2D" uid="uid://d3lhqqdtrt63a" path="res://juego/sprites/frutas/mango.png" id="3_ke58n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb3tq"]
-size = Vector2(20, 19)
+size = Vector2(20, 19.5)
 
 [node name="Comida" type="Area2D" groups=["Comida"]]
+script = ExtResource("1_rb3tq")
+textures = Array[Texture]([ExtResource("2_wgarq"), ExtResource("3_ke58n"), ExtResource("1_5gypu")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5gypu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_rb3tq")
