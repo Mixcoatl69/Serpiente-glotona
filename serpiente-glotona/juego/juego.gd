@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_right"):
 		move_dir = Vector2.RIGHT
 
+
 func _physics_process(delta: float) -> void:
 	time_since_last_move += delta * speed
 	if time_since_last_move >= time_between_moves:
