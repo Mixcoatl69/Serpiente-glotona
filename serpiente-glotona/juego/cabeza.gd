@@ -1,4 +1,4 @@
-class_name Cabeza extends parte_de_serpiente
+class_name cabeza extends Parte_de_serpiente
 
 signal comida_comida
 

@@ -1,6 +1,6 @@
 class_name Juego extends Node
 
-@onready var cabeza: Cabeza = $Cabeza as Cabeza
+@onready var Cabeza: cabeza = $Cabeza as cabeza
 @onready var Limites: limites = %Limites as limites
 @onready var spawner: Spawner = $Spawner as Spawner 
 
@@ -12,7 +12,7 @@ var move_dir:Vector2 = Vector2.RIGHT
 var parte_de_serpiente:Array[Parte_de_serpiente] = []
 
 func _ready() -> void:
-	cabeza.comida_comida.connect(_on_comida_comida)
+	Cabeza.comida_comida.connect(_on_comida_comida)
 	spawner.spawn_comida()
 	
 	pass
@@ -39,7 +39,7 @@ func update_serpiente():
 
 	var new_pos:Vector2 = cabeza.position + move_dir * Global.GRID_SIZE
 	new_pos = Limites.wrap_vector(new_pos)
-	cabeza.move_to(new_pos)
+	Cabeza.move_to(new_pos)
 	pass
 
 func _on_comida_comida():
