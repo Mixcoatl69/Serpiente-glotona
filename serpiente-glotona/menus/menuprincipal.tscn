@@ -2,8 +2,6 @@
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
 [node name="Panel" type="Panel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
