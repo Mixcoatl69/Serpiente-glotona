@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb3tq"]
 size = Vector2(20, 19.5)
 
-[node name="Comida" type="Area2D" groups=["Comida"]]
+[node name="Comida" type="Area2D" groups=["comida"]]
 script = ExtResource("1_rb3tq")
 textures = Array[Texture]([ExtResource("2_wgarq"), ExtResource("3_ke58n"), ExtResource("1_5gypu")])
 

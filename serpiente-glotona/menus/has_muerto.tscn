@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6kcijpsrm6aq" path="res://menus/has_muerto.gd" id="1_d8yvq"]
 
 [node name="HasMuerto" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_d8yvq")
 
 [node name="Panel" type="Panel" parent="."]
@@ -70,3 +71,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Salir"
+
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/ReinicioBoton" to="." method="_on_reinicio_boton_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/SalirBoton" to="." method="_on_salir_boton_pressed"]

@@ -47,6 +47,6 @@ tile_set = SubResource("TileSet_3jp40")
 script = ExtResource("6_cwd5m")
 Limites = NodePath("../Limites")
 
-[node name="Cabeza" parent="." groups=["comida"] instance=ExtResource("2_wvbjv")]
+[node name="Cabeza" parent="." instance=ExtResource("2_wvbjv")]
 unique_name_in_owner = true
 position = Vector2(64, 192)
