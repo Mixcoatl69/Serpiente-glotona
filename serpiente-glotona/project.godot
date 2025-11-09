@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Serpiente glotona"
-run/main_scene="uid://dcs1lf7n6ehdw"
+run/main_scene="uid://bks8cns6dsu2x"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

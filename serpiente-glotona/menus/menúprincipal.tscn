@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1dmndlyq2gpq"]
+[gd_scene load_steps=6 format=3 uid="uid://bks8cns6dsu2x"]
 
-[ext_resource type="Script" uid="uid://dylsscruoqfhm" path="res://menus/menú.gd" id="1_8dd40"]
-[ext_resource type="Texture2D" uid="uid://c22itnswcrjg6" path="res://menus/Menú Principal.png" id="1_8dnoj"]
-[ext_resource type="Texture2D" uid="uid://diy1vqhhqcrce" path="res://menus/Boton play.png" id="3_f76bm"]
+[ext_resource type="Script" uid="uid://dylsscruoqfhm" path="res://menus/menú.gd" id="1_ovuix"]
+[ext_resource type="Texture2D" uid="uid://c22itnswcrjg6" path="res://menus/Menú Principal.png" id="2_nj13b"]
+[ext_resource type="Texture2D" uid="uid://diy1vqhhqcrce" path="res://menus/Boton play.png" id="3_n1cd3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gam6r"]
-texture = ExtResource("3_f76bm")
+texture = ExtResource("3_n1cd3")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp33n"]
-texture = ExtResource("3_f76bm")
+texture = ExtResource("3_n1cd3")
 modulate_color = Color(0.41960785, 1, 0.19215687, 1)
 
 [node name="Menú Principal" type="Control"]
@@ -16,13 +16,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_8dd40")
+script = ExtResource("1_ovuix")
 
 [node name="Fondo" type="TextureRect" parent="."]
 layout_mode = 1
 offset_right = 640.0
 offset_bottom = 360.0
-texture = ExtResource("1_8dnoj")
+texture = ExtResource("2_nj13b")
 
 [node name="Jugar" type="Button" parent="."]
 layout_mode = 1
