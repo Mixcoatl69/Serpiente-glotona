@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bks8cns6dsu2x"]
+[gd_scene load_steps=7 format=3 uid="uid://bks8cns6dsu2x"]
 
 [ext_resource type="Script" uid="uid://dylsscruoqfhm" path="res://menus/menú.gd" id="1_ovuix"]
 [ext_resource type="Texture2D" uid="uid://c22itnswcrjg6" path="res://menus/Menú Principal.png" id="2_nj13b"]
@@ -10,6 +10,8 @@ texture = ExtResource("3_n1cd3")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp33n"]
 texture = ExtResource("3_n1cd3")
 modulate_color = Color(0.41960785, 1, 0.19215687, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_ovuix"]
 
 [node name="Menú Principal" type="Control"]
 layout_mode = 3
@@ -33,5 +35,37 @@ offset_bottom = 213.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_gam6r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kp33n")
 metadata/_edit_group_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = 11.0
+offset_right = 493.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_ovuix")
+theme_override_font_sizes/font_size = 50
+text = "Serpiente Glotona"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = 14.0
+offset_right = 495.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.41541445, 0.744636, 0.18809484, 1)
+theme_override_fonts/font = SubResource("SystemFont_ovuix")
+theme_override_font_sizes/font_size = 50
+text = "Serpiente Glotona"
 
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
