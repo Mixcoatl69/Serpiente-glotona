@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://vr53ruwe1ejg"]
+
+[ext_resource type="Script" uid="uid://com7abhin4kfk" path="res://menus/pausa.gd" id="1_ld6ol"]
+
+[node name="MenuPausa" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ld6ol")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.5686275)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="GridContainer" type="GridContainer" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Resumir" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resumir"
+
+[node name="Reiniciar" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="Salir" type="Button" parent="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Salir"
+
+[connection signal="button_down" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/Resumir" to="." method="_on_resumir_button_down"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/VBoxContainer/MarginContainer/GridContainer/Salir" to="." method="_on_salir_pressed"]

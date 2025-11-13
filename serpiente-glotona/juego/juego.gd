@@ -1,8 +1,9 @@
 class_name Juego extends Node
 
-const  hasmuerto_escena:PackedScene = preload("uid://cg0xmcc6hiu2t")
+const menupausa_escena:PackedScene = preload("uid://vr53ruwe1ejg")
+const hasmuerto_escena:PackedScene = preload("uid://cg0xmcc6hiu2t")
 var hasmuerto_menu:HasMuerto
-
+var menu_pausa:MenuPausa
 @onready var Cabeza: cabeza = $Cabeza as cabeza
 @onready var Limites: limites = %Limites as limites
 @onready var spawner: Spawner = $Spawner as Spawner 
@@ -36,10 +37,13 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed("ui_right"):
 		new_dir = Vector2.RIGHT
 	
-
+	
 	
 	if new_dir + move_dir != Vector2.ZERO and new_dir != Vector2.ZERO:
 		move_dir = new_dir
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		pausa_juego()
 	
 func _physics_process(delta: float) -> void:
 	time_since_last_move += delta * speed
@@ -72,4 +76,13 @@ func _on_cola_collided():
 		hasmuerto_menu = hasmuerto_escena.instantiate() as HasMuerto
 		add_child(hasmuerto_menu)
 		hasmuerto_menu.set_puntuacion(puntuación)
-		
+		print(puntuación)
+
+func _notification(what):
+	if what == NOTIFICATION_WM_WINDOW_FOCUS_OUT:
+		pausa_juego()
+
+func pausa_juego():
+	if not menu_pausa or hasmuerto_menu:
+		menu_pausa = menupausa_escena.instantiate() as MenuPausa
+		add_child(menu_pausa)
