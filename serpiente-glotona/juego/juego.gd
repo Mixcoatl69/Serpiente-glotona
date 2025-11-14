@@ -76,11 +76,9 @@ func _on_cola_collided():
 		hasmuerto_menu = hasmuerto_escena.instantiate() as HasMuerto
 		add_child(hasmuerto_menu)
 		hasmuerto_menu.set_puntuacion(puntuación)
-		print(puntuación)
 
-func _notification(what):
-	if what == NOTIFICATION_WM_WINDOW_FOCUS_OUT:
-		pausa_juego()
+
+
 
 func pausa_juego():
 	if not menu_pausa or hasmuerto_menu:
